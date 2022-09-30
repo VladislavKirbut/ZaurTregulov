@@ -1,4 +1,4 @@
-package sunin.part3.Methods.homework2;
+package sunin.part3.methods.homework2;
 
 public class Dog {
     String name;

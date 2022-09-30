@@ -1,4 +1,4 @@
-package sunin.part3.Methods;
+package sunin.part3.methods;
 
 public class Main {
     public static void main(String[] args) {

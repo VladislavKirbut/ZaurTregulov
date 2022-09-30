@@ -1,4 +1,4 @@
-package sunin.part3.OOP;
+package sunin.part3.oop;
 
 public class Student {
     String name;
