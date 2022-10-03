@@ -35,6 +35,13 @@ public class ConsoleOutput {
             } else if(args[0].equals("LIST")) {
                 getCommand("LIST");
             }
+        } else if(args.length == 2) {
+            int argument2 = Integer.parseInt(args[1]);
+                for(int i = 1; i < 10; i++) {
+                    if(i == argument2) {
+                        System.out.println(i);
+                    }
+                }
         }
     }
 }
