@@ -1,5 +1,8 @@
 package sunin.part3.oop;
 
+import java.util.Date;
+import java.util.Calendar;
+
 public class Student {
     String name;
     int age;
@@ -11,6 +14,11 @@ public class Student {
     }
 
     public static void main(String[] args) {
+        Date d = new Date();
+        long date = d.getTime();
+
+        System.out.println(date);
+        System.out.println(d);
         Student st1 = new Student();
         st1.name = "Vasiliy";
         st1.age = 20;
