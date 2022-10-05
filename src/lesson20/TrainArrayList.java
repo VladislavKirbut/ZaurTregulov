@@ -5,21 +5,29 @@ import java.util.Collections;
 
 public class TrainArrayList {
     public static void main(String ...args) {
-        ArrayList<String> array = new ArrayList<>() {{
-            add("JAVA");
-            add(0, "HTML");
-            add(1, "JS");
-            add("Spring");
-            add("SQL");
-        }};
-        Collections.sort(array);
-        System.out.println(array);
-        array.set(array.size() - 1, "PostegreSQL");
-        System.out.println(array);
-        array.remove(1);
-        System.out.println(array);
-        array.clear();
-        System.out.println(array);
 
+        String str = "Hello, how are you?";
+        String str1 = "Hello, how are you?";
+        String str3 = "HELLO, HOW are yoU?";
+
+        boolean bool = str.equals(str1);
+        System.out.println(bool);
+        boolean bool1 = str == str1;
+        System.out.println(bool1);
+
+        String str2 = new String("Hello, how are you?");
+        boolean bool3 = str.equals(str2);
+        System.out.println(bool3);
+
+        // Возвращает символ на указанной позиции
+        char symbol = str.charAt(2); // l
+        System.out.println(symbol);
+
+        // Сравнивает без учёта регистра
+        boolean bool4 = str3.equalsIgnoreCase(str);
+        System.out.println(bool4);
+
+        int index = str3.indexOf("HELLO");
+        System.out.println(index);
     }
 }
