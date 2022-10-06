@@ -5,7 +5,7 @@ public class CardsAccount extends BankAccount{
         super(amount);
     }
 
-    public void getMoney(double amount) {
+    protected void getMoney(double amount) {
         if (getAccountBalance() >= 0 && amount >= 0) {
             double difference = getAccountBalance() - amount - (amount * 1 / 100) ;
             if(difference >= 0) {
@@ -17,8 +17,10 @@ public class CardsAccount extends BankAccount{
 
     public static void main(String[] args) {
         CardsAccount cA = new CardsAccount(20000);
+        CardsAccount cA1 = new CardsAccount(20000);
         cA.getMoney(10000);
         cA.showAmount();
+
     }
 }
 

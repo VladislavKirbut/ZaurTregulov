@@ -8,22 +8,22 @@ public class Deposit extends BankAccount{
         super(accountBalance);
     }
 
-    public void increase(double amount) {
+    protected void increase(double amount) {
         super.increase(amount);
         fixedTime();
     }
     // дата которая устанавливается, когда мы кладём деньги
-     public void fixedTime() {
+     void fixedTime() {
         time = Calendar.getInstance();
         milliseconds  = time.getTimeInMillis();
         isIncrease = true;
     }
     // дата с которой можно выводить деньги
-    public long finishDate() {
+    long finishDate() {
             time.set(Calendar.MONTH, 11);
             return time.getTimeInMillis();
     }
-    public void getMoney(double amount) {
+    protected void getMoney(double amount) {
         if(isIncrease) {
             long finishTimeInMillis = finishDate();
             long difference = finishTimeInMillis - milliseconds;

@@ -1,30 +1,30 @@
 package skillbox6.homework6;
 
 public class BankAccount {
-    private static double accountBalance;
+    private double accountBalance;
 
     public BankAccount(double balance) {
         accountBalance = balance;
     }
 
-    public void increase(double amount) {
+    protected void increase(double amount) {
         if (amount >= 0) accountBalance += amount;
         else System.out.println("Enter a correct amount!!!");
     }
 
-    public static double getAccountBalance() {
+    protected double getAccountBalance() {
         return accountBalance;
     }
 
-    public static void setAccountBalance(double balance) {
+    protected void setAccountBalance(double balance) {
         accountBalance += balance;
     }
 
-    public void showAmount() {
+    protected void showAmount() {
         System.out.println("Your account balance: " + accountBalance);
     }
 
-    public void getMoney(double amount) {
+    protected void getMoney(double amount) {
         if (accountBalance >= 0 && amount >= 0) {
             double difference = accountBalance - amount;
             if(difference >= 0) {
@@ -34,8 +34,29 @@ public class BankAccount {
         } else System.out.println("Your account doesn't have enough money or incorrect amount.");
     }
 
+    //send money from Akk1 to Akk2
+    protected boolean send(BankAccount akk, double amount) {
+        boolean result = false;
+        if(this.accountBalance >= 0 && amount >= 0) {
+            double difference = this.accountBalance - amount;
+            if(difference >= 0) {
+                akk.accountBalance += amount;
+                this.accountBalance -= amount;
+                result = true;
+            }
+        } else {
+            System.out.println("ERROR");
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         BankAccount bA = new BankAccount(5000);
+        BankAccount bA1 = new BankAccount(10000);
+        boolean b = bA1.send(bA,3000);
+        System.out.println(b);
+        bA.showAmount();
+        bA1.showAmount();
         bA.getMoney(3000);
         bA.showAmount();
         bA.increase(10000);

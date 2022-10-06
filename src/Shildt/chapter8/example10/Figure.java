@@ -31,5 +31,25 @@ class Triangle extends Figure {
         super(a, b);
     }
 
+    double area() {
+        System.out.println("Triangle square");
+        return dim1 * dim2 / 2;
+    }
+}
 
+class FindAreas {
+    public static void main(String[] args) {
+        Figure f = new Figure(10, 10);
+        Rectangle r = new Rectangle(9, 5);
+        Triangle t = new Triangle(10, 8);
+        Figure figref;
+
+        figref = r;
+        System.out.println("Square is equal " + figref.area());
+        figref = t;
+        System.out.println("Square is equal " + figref.area());
+        figref = f;
+        System.out.println( "Square is equal " + figref.area());
+
+    }
 }
