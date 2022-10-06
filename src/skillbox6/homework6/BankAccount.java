@@ -1,15 +1,23 @@
 package skillbox6.homework6;
 
 public class BankAccount {
-    private double accountBalance;
+    private static double accountBalance;
 
-    public BankAccount(double accountBalance) {
-        this.accountBalance = accountBalance;
+    public BankAccount(double balance) {
+        accountBalance = balance;
     }
 
     public void increase(double amount) {
         if (amount >= 0) accountBalance += amount;
         else System.out.println("Enter a correct amount!!!");
+    }
+
+    public static double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public static void setAccountBalance(double balance) {
+        accountBalance += balance;
     }
 
     public void showAmount() {
