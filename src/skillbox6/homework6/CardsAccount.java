@@ -20,7 +20,7 @@ public class CardsAccount extends BankAccount{
         CardsAccount cA1 = new CardsAccount(20000);
         cA.getMoney(10000);
         cA.showAmount();
-
     }
+
 }
 
